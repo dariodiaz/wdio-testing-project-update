@@ -1,0 +1,30 @@
+{
+  "name": "wdio-testing-project-update",
+  "version": "1.0.0",
+  "description": "Automated Software Testing with WebdriverIO",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio wdio.conf.js",
+    "test-spec": "wdio wdio.conf.js --spec"
+  },
+  "keywords": [
+    "Automation",
+    "Webdriver"
+  ],
+  "author": "Dario Diaz",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "@wdio/cli": "^6.0.5",
+    "@wdio/local-runner": "^6.0.5",
+    "@wdio/mocha-framework": "^6.0.4",
+    "@wdio/spec-reporter": "^6.0.4",
+    "@wdio/sync": "^6.0.1",
+    "chromedriver": "^80.0.1",
+    "prettier": "^2.0.2",
+    "wdio-chromedriver-service": "^5.0.2"
+  }
+}
