@@ -1,4 +1,5 @@
-.prettierrc
 node_modules/
 your-name.png
 package-lock.json
+node_modules
+.prettierrc
