@@ -1,4 +1,6 @@
 import App from '../page-objects/App'
+import LoginPage from '../page-objects/pages/LoginPage'
+import Navbar from '../page-objects/components/Navbar'
 
 describe('E2E - Feedback', () => {
     it('Should load feedback form', () => {
