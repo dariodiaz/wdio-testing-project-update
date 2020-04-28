@@ -1,29 +1,18 @@
 import App from '../page-objects/App'
 import LoginPage from '../page-objects/pages/LoginPage'
 import Navbar from '../page-objects/components/Navbar'
+import FeedbackPage from '../page-objects/pages/FeedbackPage'
 
 describe('E2E - Feedback', () => {
     it('Should load feedback form', () => {
-        // browser.url('http://zero.webappsecurity.com/')
-        App.openHomepage()
-        const feedbackButton = $('#feedback')
-        feedbackButton.waitForExist()
-        feedbackButton.click()
-        const feedbackForm = $('form')
-        feedbackForm.waitForExist()
+        App.openFeedbackPage()
+        FeedbackPage.formIsVisible()
     })
 
     it('Should submit feedback form', () => {
-        const name = $('#name')
-        name.setValue('Dario')
-        const email = $('#email')
-        email.setValue('test@test.com')
-        const subject = $('#subject')
-        subject.setValue('Example Subject')
-        const comment = $('#comment')
-        comment.setValue('This is a sample feedback comment')
-        const submitFeedback = $('input[type="submit"]')
-        submitFeedback.click()
-        expect(browser).toHaveUrl('http://zero.webappsecurity.com/sendFeedback.html')
+        FeedbackPage.fillForm('Dario', 'test@test.com', 'Test wdio', 'This is just a test')
+        FeedbackPage.submitForm()
+        expect(browser).toHaveUrl(
+            'http://zero.webappsecurity.com/sendFeedback.html')
     })
 });
