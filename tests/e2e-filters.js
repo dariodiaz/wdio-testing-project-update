@@ -1,6 +1,8 @@
 import App from '../page-objects/App'
 import LoginPage from '../page-objects/pages/LoginPage'
 import Navbar from '../page-objects/components/Navbar'
+import InsideNavbar from '../page-objects/components/InsideNavbar'
+import FiltersPage from '../page-objects/pages/FiltersPage'
 
 describe('E2E Tests - Transactions Filter', () => {
     it('Should log into application', () => {
@@ -10,21 +12,12 @@ describe('E2E Tests - Transactions Filter', () => {
     })
 
     it('Transaction filter should work', () => {
-        const accountTab = $('#account_activity_tab')
-        accountTab.click()
-        const findTransactionsTab = $('#tabs > ul > li:nth-child(2) > a')
-        findTransactionsTab.waitForExist()
-        findTransactionsTab.click()
-        const descriptionField = $('#aa_description')
-        descriptionField.waitForExist()
-        descriptionField.setValue('TRANSFER')
-        const findButton = $('button[type="submit"]')
-        findButton.click()
-        $('#filtered_transactions_for_account').waitForExist()
-        // const resultsMsg = $('.well')
-        // expect(resultsMsg).toHaveText('No results.')
-        expect($('#filtered_transactions_for_account > table')).toBeVisible()
-        expect($('#filtered_transactions_for_account > table > tbody > tr:nth-child(1) > td:nth-child(2)'))
-        .toHaveText('ONLINE TRANSFER REF #UKKSDRQG6L')
+        InsideNavbar.clickAccountActivityTab()
+        InsideNavbar.clickFiltersLink()
+        FiltersPage.fillDescription('Test')
+        FiltersPage.submitFilter()
+        FiltersPage.isResultsTableVisible()
+        const message = FiltersPage.message
+        expect(message).toHaveText('No results.')
     })
 });
