@@ -18,6 +18,16 @@ class Navbar extends Base {
         return $('#help_link')
     }
 
+    get searchBox() {
+        return $('#searchTerm')
+    }
+
+    search(text) {
+        this.searchBox.waitForExist()
+        this.searchBox.setValue(text)
+        browser.keys('Enter')
+    }
+
     clickSignIn() {
         this.signInButton.waitForExist()
         this.signInButton.click()
