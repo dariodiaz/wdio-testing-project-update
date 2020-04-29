@@ -1,10 +1,6 @@
 import Base from '../Base'
 
 class CurrencyExchangePage extends Base {
-    get payBillsTab() {
-        return $('#pay_bills_tab')
-    }
-
     get purchaseCurrencyTab() {
         return $('#tabs > ul > li:nth-child(3) > a')
     }
@@ -27,11 +23,6 @@ class CurrencyExchangePage extends Base {
 
     get message() {
         return $('#alert_content')
-    }
-
-    clickPayBillsTab() {
-        this.payBillsTab.waitForExist()
-        this.payBillsTab.click()
     }
 
     clickPurchaseCurrencyTab() {

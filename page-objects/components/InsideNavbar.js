@@ -9,6 +9,10 @@ class InsideNavbar extends Base {
         return $('#tabs > ul > li:nth-child(2) > a')
     }
 
+    get payBillsTab() {
+        return $('#pay_bills_tab')
+    }
+
     clickAccountActivityTab() {
         this.accountActivityTab.waitForExist()
         this.accountActivityTab.click()
@@ -17,6 +21,11 @@ class InsideNavbar extends Base {
     clickFiltersLink() {
         this.filtersLink.waitForExist()
         this.filtersLink.click()
+    }
+
+    clickPayBillsTab() {
+        this.payBillsTab.waitForExist()
+        this.payBillsTab.click()
     }
 }
 

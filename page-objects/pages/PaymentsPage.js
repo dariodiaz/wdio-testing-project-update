@@ -1,10 +1,6 @@
 import Base from '../Base'
 
 class PaymentsPage extends Base {
-    get payBillsTab() {
-        return $('#pay_bills_tab')
-    }
-
     get selectPayee() {
         return $('#sp_payee')
     }
@@ -41,11 +37,6 @@ class PaymentsPage extends Base {
     selectPayeeByAttribute(attribute, value) {
         this.selectPayee.waitForExist()
         this.selectPayee.selectByAttribute(attribute, value)
-    }
-
-    clickPayBillsTab() {
-        this.payBillsTab.waitForExist()
-        this.payBillsTab.click()
     }
 
     enterPaymentDetails() {

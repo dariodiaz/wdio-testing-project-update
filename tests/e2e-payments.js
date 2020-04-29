@@ -1,6 +1,7 @@
 import App from '../page-objects/App'
 import LoginPage from '../page-objects/pages/LoginPage'
 import Navbar from '../page-objects/components/Navbar'
+import InsideNavbar from '../page-objects/components/InsideNavbar'
 import PaymentsPage from '../page-objects/pages/PaymentsPage'
 
 describe('E2E Tests - Payments', () => {
@@ -11,7 +12,7 @@ describe('E2E Tests - Payments', () => {
     })
 
     it('Should make payment', () => {
-        PaymentsPage.clickPayBillsTab()
+        InsideNavbar.clickPayBillsTab()
         PaymentsPage.selectPayeeByAttribute('value', 'apple')
         PaymentsPage.selectAccountType('Loan')
         PaymentsPage.enterPaymentDetails('100', '2020-04-30', 'Test refactored')
