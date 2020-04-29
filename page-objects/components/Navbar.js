@@ -29,8 +29,9 @@ class Navbar extends Base {
     }
 
     clickSignIn() {
-        this.signInButton.waitForExist()
-        this.signInButton.click()
+        browser.waitAndClick(this.signInButton)
+        // this.signInButton.waitForExist()
+        // this.signInButton.click()
     }
 
     insideNavbarIsVisible() {

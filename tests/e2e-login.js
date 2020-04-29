@@ -6,6 +6,7 @@ describe('E2E Tests - Login / Logout Flow', () => {
     it('Should not login with invalid credentials', () => {
         App.openHomepage()
         Navbar.clickSignIn()
+        //browser.waitAndClick('#signin_button')
         LoginPage.formIsVisible()
         LoginPage.fillForm('usernamexxx', 'passwordxxx')
         LoginPage.submitForm()
