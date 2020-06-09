@@ -1,6 +1,7 @@
 import App from '../page-objects/App'
 import LoginPage from '../page-objects/pages/LoginPage'
 import Navbar from '../page-objects/components/Navbar'
+import * as dataHelper from '../lib/data-helpers'
 
 describe('E2E Tests - Login / Logout Flow', () => {
     it('Should not login with invalid credentials', () => {
@@ -8,7 +9,7 @@ describe('E2E Tests - Login / Logout Flow', () => {
         Navbar.clickSignIn()
         //browser.waitAndClick('#signin_button')
         LoginPage.formIsVisible()
-        LoginPage.fillForm('usernamexxx', 'passwordxxx')
+        LoginPage.fillForm(dataHelper.getRandomName(), 'passwordxxx')
         LoginPage.submitForm()
         const message = LoginPage.error
         expect(message).toHaveText('Login and/or password are wrong.')
