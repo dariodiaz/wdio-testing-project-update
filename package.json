@@ -20,6 +20,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
+    "@wdio/browserstack-service": "^6.1.15",
     "@wdio/cli": "^6.0.5",
     "@wdio/local-runner": "^6.0.5",
     "@wdio/mocha-framework": "^6.0.4",
